@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毓崽 生日快乐 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes sparkle-rotate {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.8; }
+            50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(251, 191, 36, 0.4); transform: scale(1); }
+            50% { box-shadow: 0 0 15px rgba(251, 191, 36, 0.8); transform: scale(1.1); }
+        }
+        @keyframes glow-pulse-pink {
+            0%, 100% { box-shadow: 0 0 5px rgba(244, 114, 182, 0.4); transform: scale(1); }
+            50% { box-shadow: 0 0 15px rgba(244, 114, 182, 0.8); transform: scale(1.1); }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes twinkle-slow {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+        @keyframes twinkle-fast {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        @keyframes shooting-star {
+            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; width: 2px; }
+            70% { opacity: 1; }
+            100% { transform: translateX(-500px) translateY(500px) rotate(-45deg); opacity: 0; width: 0px; }
+        }
+        @keyframes snowfall {
+            0% { transform: translateY(-10vh) translateX(0); }
+            100% { transform: translateY(110vh) translateX(20px); }
+        }
+        @keyframes snowfall-sway {
+            0% { transform: translateY(-10vh) translateX(0); }
+            50% { transform: translateY(50vh) translateX(-20px); }
+            100% { transform: translateY(110vh) translateX(10px); }
+        }
+        @keyframes float-bubble {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+        @keyframes float-bubble-2 {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-15px) translateX(-15px); }
+        }
+        @keyframes float-bubble-3 {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-25px) translateX(5px); }
+        }
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050515;
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient-main {
+            background: linear-gradient(180deg, #050520 0%, #0a0a3a 25%, #1a0a3e 50%, #0f0a2a 75%, #050515 100%);
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
+
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 2px;
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(to left, rgba(255,255,255,0.6), transparent);
+        }
+
+        .modal-enter { animation: fadeIn 0.4s ease-out; }
+        .modal-content-enter { animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col">
+
+    <!-- Background Layers -->
+    <div class="fixed inset-0 -z-10 bg-gradient-main">
+        <div class="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-20 blur-[120px]" 
+             style="background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full opacity-15 blur-[100px]"
+             style="background: radial-gradient(circle, rgba(255, 107, 157, 0.3), transparent 70%);"></div>
+        <div class="absolute top-1/3 right-1/3 w-[400px] h-[400px] rounded-full opacity-10 blur-[80px]"
+             style="background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);"></div>
+    </div>
+
+    <!-- Star Background Image (Tree) -->
+    <div class="fixed bottom-0 left-0 right-0 -z-[5] pointer-events-none h-[70vh]">
+        <div class="w-full h-full bg-cover bg-bottom bg-no-repeat opacity-70" 
+             style="background-image: url('assets/starlight-tree.png'); 
+                    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 20%, rgba(0,0,0,0.6) 50%, transparent 100%);
+                    mask-image: linear-gradient(to top, rgba(0,0,0,1) 20%, rgba(0,0,0,0.6) 50%, transparent 100%);">
+        </div>
+        <!-- Bottom ground blend - 确保地面颜色一致 -->
+        <div class="absolute inset-x-0 bottom-0 h-32" 
+             style="background: linear-gradient(to top, #050515 15%, transparent 100%);"></div>
+    </div>
+
+    <!-- Star Field -->
+    <div id="star-field" class="fixed inset-0 overflow-hidden pointer-events-none"></div>
+
+    <!-- Snowflakes -->
+    <div id="snowflakes" class="fixed inset-0 overflow-hidden pointer-events-none"></div>
+
+    <!-- Content -->
+    <main class="relative z-10 flex flex-col min-h-screen">
+        <header class="pt-8 md:pt-12 pb-4 text-center px-4">
+            <div style="animation: fadeInUp 1.5s ease-out 0.3s both;">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <span class="inline-block text-amber-300" style="animation: sparkle-rotate 3s ease-in-out infinite">✦</span>
+                    <span class="inline-block text-pink-300 text-sm tracking-[0.3em] uppercase font-light" style="animation: fadeInUp 1.5s ease-out 0.5s both">Happy Birthday</span>
+                    <span class="inline-block text-amber-300" style="animation: sparkle-rotate 3s ease-in-out 0.5s infinite">✦</span>
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-3 leading-tight" style="animation: fadeInUp 1.5s ease-out 0.3s both">
+                    <span class="inline-block" style="background: linear-gradient(135deg, #ffd700, #ffaa00, #ff6b9d, #ffd700, #ff6b9d); background-size: 300% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));">
+                        毓崽
+                    </span>
+                </h1>
+
+                <div class="text-2xl sm:text-3xl md:text-4xl font-light tracking-wider mb-4" style="animation: fadeInUp 1.5s ease-out 0.8s both">
+                    <span class="text-white/90">Birthday</span>
+                    <span class="mx-3 text-amber-300/80">✧</span>
+                    <span style="background: linear-gradient(90deg, #ff6b9d, #c084fc, #60a5fa, #ff6b9d); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite;">2026</span>
+                </div>
+
+                <div class="flex items-center justify-center gap-2" style="animation: fadeIn 2s ease-out 1.2s both">
+                    <div class="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/60"></div>
+                    <div class="w-2 h-2 rounded-full bg-amber-400/60" style="animation: glow-pulse 2s ease-in-out infinite"></div>
+                    <div class="h-px w-8 bg-gradient-to-r from-amber-400/60 via-pink-400/60 to-amber-400/60"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-pink-400/60" style="animation: glow-pulse-pink 2.5s ease-in-out 0.5s infinite"></div>
+                    <div class="h-px w-8 bg-gradient-to-r from-pink-400/60 via-amber-400/60 to-pink-400/60"></div>
+                    <div class="w-2 h-2 rounded-full bg-amber-400/60" style="animation: glow-pulse 2s ease-in-out 1s infinite"></div>
+                    <div class="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/60"></div>
+                </div>
+
+                <p class="text-white/40 text-sm mt-4 tracking-widest font-light" style="animation: fadeIn 2s ease-out 2s both">
+                    点击星光瓶，开启你的祝福 ✨
+                </p>
+            </div>
+        </header>
+
+        <section id="bottles-container" class="relative z-10 flex-1 w-full max-w-5xl mx-auto px-4 py-4 min-h-[50vh] sm:min-h-[55vh]">
+            <!-- Bottles will be injected here -->
+        </section>
+
+        <div class="text-center mt-2 mb-4 relative z-10">
+            <span id="counter" class="text-white/30 text-xs tracking-widest font-light">已开启 0/6 个星光瓶</span>
+            <p id="all-collected" class="text-amber-300/60 text-xs mt-1 hidden">✨ 你已收集所有祝福！</p>
+        </div>
+
+        <footer class="relative z-10 py-6 text-center">
+            <p class="text-white/20 text-[10px] tracking-[0.2em] uppercase font-light">
+                Created with Love for YOU &bull; 2026
+            </p>
+        </footer>
+    </main>
+
+    <!-- Modal Placeholder -->
+    <div id="modal-container" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div id="modal-body" class="relative z-10 max-w-md w-full"></div>
+    </div>
+
+    <script>
+        const bottlesData = [
+            { id: 1, emoji: '🎂', label: '生日祝福', message: '生日快乐，毓崽！愿你新的一岁里，每一天都像今夜星空般璀璨耀眼。所有的美好与幸运，都会在这特别的日子里与你相遇！✨', glowColor: 'rgba(255, 215, 0, 0.3)', floatAnimation: 'float-bubble', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[12%] left-[8%] sm:left-[15%]' },
+            { id: 2, emoji: '💫', label: '经典名场面', message: '「Sei破改！」—— 第一次听很疑惑但之后习惯了反而感觉很可爱。谢谢你带给我们的每一个欢笑瞬间，这就是最好的礼物！🎉', glowColor: 'rgba(255, 107, 157, 0.3)', floatAnimation: 'float-bubble-2', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[5%] right-[10%] sm:right-[15%]' },
+            { id: 3, emoji: '🌙', label: '温柔寄语', message: '你是夜空中最亮的那颗星，是我们心中最温暖的存在。愿所有的温柔与美好，都如期而至在你的生日。每一颗星光都在为你祝福。🌟', glowColor: 'rgba(192, 132, 252, 0.3)', floatAnimation: 'float-bubble-3', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[35%] left-[5%] sm:left-[10%]' },
+            { id: 4, emoji: '🚀', label: '未来期许', message: '新的一岁，新的冒险！愿你在未来的日子里，继续勇敢前行，追逐每一个梦想。我们永远是你最坚实的后盾！加油，毓崽！💪', glowColor: 'rgba(34, 211, 238, 0.3)', floatAnimation: 'float-bubble', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[30%] right-[5%] sm:right-[12%]' },
+            { id: 5, emoji: '💝', label: '心意祝福', message: '感谢遇见你，感谢你带给我们每一个快乐瞬间。这份礼物虽然简单，但装载的是满满的真心。生日快乐，我们最可爱的毓崽！🥰', glowColor: 'rgba(251, 113, 133, 0.3)', floatAnimation: 'float-bubble-2', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[55%] left-[15%] sm:left-[20%]' },
+            { id: 6, emoji: '🎵', label: '美好记忆', message: '每一次直播都是一段珍贵的回忆。感谢你分享的那些笑声和感动，这些将成为我们共同珍藏的宝藏。愿你永远保持那份纯真与热爱！🎵', glowColor: 'rgba(232, 121, 249, 0.3)', floatAnimation: 'float-bubble-3', size: 'w-22 h-22 sm:w-26 sm:h-26', position: 'top-[50%] right-[8%] sm:right-[15%]' },
+        ];
+
+        let openedBottles = new Set();
+
+        function initStars() {
+            const container = document.getElementById('star-field');
+            const count = 200;
+            const animations = ['twinkle', 'twinkle-slow', 'twinkle-fast'];
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 0.5;
+                const animClass = animations[Math.floor(Math.random() * animations.length)];
+                Object.assign(star.style, {
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    backgroundColor: size > 2 ? '#ffeaa7' : '#ffffff',
+                    boxShadow: size > 2 ? `0 0 ${size * 2}px rgba(255, 234, 167, 0.6)` : `0 0 ${size}px rgba(255, 255, 255, 0.4)`,
+                    opacity: Math.random() * 0.7 + 0.3,
+                    animation: `${animClass} ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 5}s infinite`
+                });
+                container.appendChild(star);
+            }
+
+            // Shooting stars
+            const shootingData = [
+                { top: '15%', left: '10%', delay: 2, duration: 1.5 },
+                { top: '8%', left: '40%', delay: 7, duration: 1.2 },
+                { top: '25%', left: '65%', delay: 12, duration: 1.8 },
+                { top: '5%', left: '80%', delay: 18, duration: 1.3 }
+            ];
+            shootingData.forEach(data => {
+                const sStar = document.createElement('div');
+                sStar.className = 'shooting-star';
+                Object.assign(sStar.style, {
+                    top: data.top,
+                    left: data.left,
+                    animation: `shooting-star ${data.duration}s ease-in ${data.delay}s infinite`
+                });
+                container.appendChild(sStar);
+            });
+        }
+
+        function initSnowflakes() {
+            const container = document.getElementById('snowflakes');
+            for (let i = 0; i < 60; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'absolute';
+                const size = Math.random() * 6 + 2;
+                Object.assign(flake.style, {
+                    left: `${Math.random() * 100}%`,
+                    top: '-20px',
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    opacity: Math.random() * 0.6 + 0.2,
+                    animation: `${Math.random() > 0.5 ? 'snowfall' : 'snowfall-sway'} ${Math.random() * 10 + 8}s linear ${Math.random() * 15}s infinite`
+                });
+                if (size > 5) {
+                    flake.innerHTML = `<svg width="${size * 2}" height="${size * 2}" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8H9.5L12 2Z" fill="white" opacity="0.8"/><path d="M12 22L9.5 16H14.5L12 22Z" fill="white" opacity="0.8"/><path d="M2 12L8 9.5V14.5L2 12Z" fill="white" opacity="0.8"/><path d="M22 12L16 14.5V9.5L22 12Z" fill="white" opacity="0.8"/></svg>`;
+                } else {
+                    flake.style.borderRadius = '50%';
+                    flake.style.backgroundColor = 'white';
+                }
+                container.appendChild(flake);
+            }
+        }
+
+        function initBottles() {
+            const container = document.getElementById('bottles-container');
+            bottlesData.forEach(bottle => {
+                const btn = document.createElement('button');
+                btn.className = `absolute ${bottle.position} cursor-pointer group focus:outline-none transition-all duration-700 opacity-0`;
+                btn.style.animation = `fadeInUp 0.8s ease-out ${bottle.id * 0.3 + 1.5}s both`;
+                btn.innerHTML = `
+                    <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="box-shadow: 0 0 40px ${bottle.glowColor}, 0 0 80px ${bottle.glowColor}; transform: scale(1.5);"></div>
+                    <div class="${bottle.size} rounded-full flex items-center justify-center relative overflow-hidden backdrop-blur-md border transition-all duration-300"
+                         style="background: linear-gradient(135deg, ${bottle.glowColor}, rgba(255,255,255,0.05)); border-color: ${bottle.glowColor.replace('0.3', '0.4')}; animation: ${bottle.floatAnimation} ${4 + bottle.id % 3}s ease-in-out ${bottle.id * 0.5}s infinite;">
+                        <span class="text-3xl relative z-10 drop-shadow-lg select-none">${bottle.emoji}</span>
+                    </div>
+                    <div class="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-white/50 font-light tracking-wider opacity-50 group-hover:opacity-100 transition-opacity duration-300">${bottle.label}</div>
+                `;
+                btn.onclick = () => openModal(bottle);
+                container.appendChild(btn);
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('modal-container').classList.add('hidden');
+        }
+        window.closeModal = closeModal;
+
+        function openModal(bottle) {
+            const modal = document.getElementById('modal-container');
+            const body = document.getElementById('modal-body');
+            body.innerHTML = `
+                <div class="rounded-2xl p-6 sm:p-8 border relative overflow-hidden modal-content-enter"
+                     style="background: linear-gradient(135deg, rgba(10, 10, 40, 0.95), rgba(20, 10, 50, 0.9)); border-color: ${bottle.glowColor}; box-shadow: 0 0 60px ${bottle.glowColor}, 0 25px 50px rgba(0,0,0,0.5);">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl">${bottle.emoji}</span>
+                            <h3 class="text-lg font-medium text-amber-300">${bottle.label}</h3>
+                        </div>
+                        <button onclick="closeModal()" class="w-10 h-10 -mr-2 rounded-full flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-all duration-200 z-50">
+                            <span class="text-2xl leading-none">✕</span>
+                        </button>
+                    </div>
+                    <p class="text-white/80 text-sm sm:text-base leading-relaxed font-light">${bottle.message}</p>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            openedBottles.add(bottle.id);
+            updateCounter();
+        }
+
+        document.getElementById('modal-backdrop').onclick = closeModal;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = `已开启 ${openedBottles.size}/${bottlesData.length} 个星光瓶`;
+            if (openedBottles.size === bottlesData.length) document.getElementById('all-collected').classList.remove('hidden');
+        }
+
+        window.onload = () => {
+            initStars();
+            initSnowflakes();
+            initBottles();
+        };
+    </script>
+</body>
+</html>
